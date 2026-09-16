@@ -4,11 +4,13 @@
   "version": "1.2.15",
   "private": true,
   "description": "Ryza Chat offline companion framework — frameless desktop shell",
+  "homepage": "https://github.com/zeroa234/ryza-chat-desktop",
   "main": "main.js",
-  "author": "zeroa234",
+  "author": "zeroa234 <zeroa234@example.com>",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder --win"
+    "dist": "electron-builder --win",
+    "dist:linux": "electron-builder --linux"
   },
   "devDependencies": {
     "electron": "33.2.0",
@@ -41,6 +43,14 @@
         { "target": "nsis" }
       ],
       "icon": "build/icon.png"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "icon": "build/icon.png",
+      "category": "Network;Chat"
     },
     "nsis": {
       "oneClick": false,
